@@ -262,19 +262,6 @@ def log_file_saved(filepath, indentation_tabs=1):
         f"💾 Saved: {filepath}")
 
 
-def log_detection_result(label, value, indentation_tabs=1):
-    """
-    Log a detection result with consistent formatting.
-    
-    Args:
-        label (str): Label for the detected value
-        value: Detected value
-        indentation_tabs (int): Indentation level
-    """
-    log(indentation_tabs, 0, 0, Colors.BRIGHT_GREEN, 
-        f"🎯 {label}: {value}")
-
-
 def log_final_result(success, message, width=60):
     """
     Log a final result with decorative formatting.
