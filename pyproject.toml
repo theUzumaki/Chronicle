@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chronicle"
+version = "0.1.0"
+description = "A flexible and colorized logging system for Python applications"
+readme = "README.md"
+authors = [
+    { name = "theUzumaki", email = "" }
+]
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: System :: Logging",
+]
+keywords = ["logging", "logger", "colorized", "terminal", "console"]
+
+[project.urls]
+Homepage = "https://github.com/theUzumaki/Chronicle"
+Repository = "https://github.com/theUzumaki/Chronicle"
+Issues = "https://github.com/theUzumaki/Chronicle/issues"
+
+[tool.setuptools]
+packages = ["chronicle"]
