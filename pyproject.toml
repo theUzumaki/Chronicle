@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "A flexible and colorized logging system for Python applications"
 readme = "README.md"
 authors = [
-    { name = "theUzumaki", email = "" }
+    { name = "theUzumaki", email = "mattiamaiorano02@gmail.com" }
 ]
 requires-python = ">=3.7"
 classifiers = [
