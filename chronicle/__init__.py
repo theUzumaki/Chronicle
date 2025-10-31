@@ -16,11 +16,10 @@ from .logger import (
     log_debug,
     log_step,
     log_file_saved,
-    log_detection_result,
     log_final_result,
 )
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "Colors",
