@@ -35,6 +35,5 @@ __all__ = [
     "log_debug",
     "log_step",
     "log_file_saved",
-    "log_detection_result",
     "log_final_result",
 ]

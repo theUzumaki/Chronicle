@@ -23,6 +23,7 @@ git+https://github.com/theUzumaki/Chronicle.git
 - **Color support**: Full ANSI color support including text colors, bright colors, background colors, and styles
 - **Pipeline logging**: Special functions for structured logging in multi-step processes
 - **File operation logging**: Dedicated functions for logging file saves and detection results
+ - **File operation logging**: Dedicated functions for logging file saves
 
 ## Basic Usage
 
@@ -118,11 +119,16 @@ log_file_saved("models/trained_model.pkl", indentation_tabs=1)
 ```
 
 ### Detection Results
-```python
-from chronicle import log_detection_result
 
-log_detection_result("Accuracy", "95.3%")
-log_detection_result("Clock center", "(320, 240)")
+NOTE: The prior `log_detection_result` helper was removed from the public API.
+Use `log_info`, `log_file_saved`, or other semantic functions to report detection
+results, for example:
+
+```python
+from chronicle import log_info
+
+log_info("Accuracy: 95.3%")
+log_info("Clock center: (320, 240)")
 ```
 
 ## Color Reference
@@ -159,7 +165,7 @@ log_detection_result("Clock center", "(320, 240)")
 ```python
 from chronicle import (
     log, log_section_header, log_step, log_error, log_success,
-    log_file_saved, log_detection_result, Colors
+    log_file_saved, Colors
 )
 
 # Application header
@@ -174,7 +180,7 @@ log_step(1, 3, "Data Loading")
 log_file_saved("data/input.csv", indentation_tabs=1)
 
 log_step(2, 3, "Processing")
-log_detection_result("Items processed", "1000", indentation_tabs=1)
+log(1, 0, 0, Colors.INFO, "Items processed: 1000")
 
 log_step(3, 3, "Saving Results")
 log_file_saved("output/results.json", indentation_tabs=1)
@@ -218,12 +224,12 @@ Functions:
 - `log_subsection(title, indentation_tabs=0)` - Log subsection header
 - `log_step(step_number, total_steps, description, indentation_tabs=0)` - Log processing step
 - `log_file_saved(filepath, indentation_tabs=1)` - Log file save with 💾 symbol
-- `log_detection_result(label, value, indentation_tabs=1)` - Log detection result with 🎯 symbol
+-- `log_detection_result(label, value, indentation_tabs=1)` - NOTE: removed from public API; use `log_info` or `log_file_saved`
 
 ## Demo
-Run the demo script to see all features in action:
+Run the demo script to see a concise example of the API in action:
 ```bash
-python logger_demo.py
+python example.py
 ```
 
 ## Integration Example
